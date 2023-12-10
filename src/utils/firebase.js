@@ -21,12 +21,12 @@ import {
 
 // Production Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA1FpJMHtOeeJ2w_3W4tJW-qXri4_Fmt0E",
-  authDomain: "carsome-martech-tools.firebaseapp.com",
-  projectId: "carsome-martech-tools",
-  storageBucket: "carsome-martech-tools.appspot.com",
-  messagingSenderId: "399957821777",
-  appId: "1:399957821777:web:51b2771f053f44101c2b70",
+  apiKey: "AIzaSyD6fLPjvWWDwiZcTQIn7sCFlpaiit9Jzq0",
+  authDomain: "connectwyze.firebaseapp.com",
+  projectId: "connectwyze",
+  storageBucket: "connectwyze.appspot.com",
+  messagingSenderId: "845633525787",
+  appId: "1:845633525787:web:8c8d253d6156c2919600be"
 };
 
 // Staging Your web app's Firebase configuration
