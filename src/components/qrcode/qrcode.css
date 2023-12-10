@@ -1,0 +1,11 @@
+.qr-code-dwn-btn{
+    display: block;
+    background-color: #674188 !important;
+    color: #fff !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin: 20px 0px 0px 0px !important;
+    }
+}

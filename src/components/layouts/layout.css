@@ -1,0 +1,15 @@
+.header-title{
+    font-size: 20px !important;
+    font-weight: 500 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .header-title{
+        font-size: 14px !important;
+    }
+}
+
+
+nav > .MuiListItemButton-root:hover{
+    background-color: #C3ACD0 !important;
+}

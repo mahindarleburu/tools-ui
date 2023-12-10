@@ -1,0 +1,73 @@
+.btn-generate-link{
+    padding: 10px 60px !important;
+    margin-right: 20px  !important;
+}
+
+.description-text{
+    font-style: italic;
+    font-size: 12px !important;
+    margin-bottom: 20px !important;
+}
+
+.long-url{
+    width: 80%;
+    display: inline-block;
+    background-color: #f5fcff;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.short-url{
+    width: 50%;
+    display: initial;
+    background-color: #f5fcff;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.copy-btn{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.custom-stepper{
+    color: black !important;
+}
+
+.dwn-btn{
+    display: inline-block;
+    background-color: #674188 !important;
+    color: #fff !important;
+}
+
+.MuiStepIcon-root.Mui-active{
+    color: #674188 !important;
+}
+
+.MuiStepIcon-root.Mui-completed{
+    color: #fdcf33 !important;
+}
+
+.request-source-btn{
+    margin-right: 20px !important;
+    font-size: 14px !important;
+    float: right;
+    margin-bottom: 15px !important;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin: 20px 0px 0px 0px !important;
+    }
+
+    .request-source-btn{
+        margin-right: 0px !important;
+        float: right;
+        cursor: pointer;
+    }
+
+    .request-source-btn a {
+        font-size: 11px !important;
+    }
+}
