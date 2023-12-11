@@ -54,11 +54,6 @@ provider.setCustomParameters({
 const auth = getAuth(app);
 
 const signInWithGooglePopup = (menuName) => {
-  window.analytics.track(menuName+" Button Clicked", {
-    "page_name": 'login',
-    "url_path": window.location.host + '' + window.location.pathname,
-    "full_url": window.location.href,
-});
   signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -122,15 +117,6 @@ const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) 
         role:defaultUserRole,
         ...additionalInformation,
       });
-      window.analytics.identify(userAuth.uid, {
-        name: userAuth.displayName,
-        email: userAuth.email,
-      });
-
-      window.analytics.track("Signin Success", {
-        path: window.location.host + "" + window.location.pathname,
-        url: window.location.href,
-      });
     } catch (error) {
       console.log("error while creating document", error.message);
     }
@@ -152,15 +138,6 @@ const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) 
     } catch (error) {
       console.log("error while creating document", error.message);
     }
-    window.analytics.identify(userAuth.uid, {
-      name: userAuth.displayName,
-      email: userAuth.email,
-    });
-
-    window.analytics.track("Signin Success", {
-      path: window.location.host + "" + window.location.pathname,
-      url: window.location.href,
-    });
   }
 };
 

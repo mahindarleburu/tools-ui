@@ -33,11 +33,6 @@ export default function ShortUrl() {
   const dispatch = useDispatch();
   const onClickBuild = async (e) => {
     e.preventDefault();
-    window.analytics.track("Generate Button Clicked", {
-      "page_name": 'shorten_url',
-      "url_path": window.location.host + '' + window.location.pathname,
-      "full_url": window.location.href,
-  });
     const data = {
       long_url: long_url,
       user_id: user.uid,
@@ -72,12 +67,6 @@ export default function ShortUrl() {
   const onClickCopyOnelink = () => {
     navigator.clipboard.writeText(shortUrl);
     toast.info("Copy to clipboard success");
-    window.analytics.track("Copy Button Clicked", {
-      "page_name": 'shorten_url',
-      "copy_url":shortUrl,
-      "url_path": window.location.host + '' + window.location.pathname,
-      "full_url": window.location.href,
-  });
   };
 
   useEffect(() => {
@@ -99,13 +88,6 @@ export default function ShortUrl() {
     };
   }, []);
 
-  const segmentTracking = ()=>{
-    window.analytics.track("Download Qrcode Button Clicked", {
-      "page_name": 'shorten_url',
-      "url_path": window.location.host + '' + window.location.pathname,
-      "full_url": window.location.href,
-  });
-  }
   const handleFetchOnelinkById = async (id) => {
     try {
       const response = await instance.get(getOnelinkById + id);
@@ -230,7 +212,7 @@ export default function ShortUrl() {
             <QRcodeImage url={shortUrl}/>
             <Button
               className="qr-code-dwn-btn"
-              onClick={()=> {downloadCustomQRcode({url:shortUrl, name:name}); segmentTracking()}}
+              onClick={()=> {downloadCustomQRcode({url:shortUrl, name:name});}}
               size="small"
             >
               <QrCode2Sharp

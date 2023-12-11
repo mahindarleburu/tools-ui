@@ -50,11 +50,6 @@ const Layout = (props) => {
   let location = useLocation();
 
   const handleDrawerToggle = (menuName) => {
-    window.analytics.track(menuName +" Page Viewed", {
-      "page_name": menuName,
-      "path": window.location.host + '' + window.location.pathname,
-      "url": window.location.href,
-  });
     setMobileOpen(!mobileOpen);
   };
   const handleOpenUserMenu = (event) => {
@@ -65,10 +60,6 @@ const Layout = (props) => {
   };
   const signoutandredirect = () => {
     signOutGoogle();
-    window.analytics.track("Sign Out", {
-        "path": window.location.host + '' + window.location.pathname,
-        "url": window.location.href,
-    });
   };
   const listDataapi = async (uid) => {
     dispatch(getUserById());

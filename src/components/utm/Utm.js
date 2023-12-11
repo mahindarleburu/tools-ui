@@ -135,11 +135,6 @@ export default function Utm() {
   };
 
   const handleStepTwo = () => {
-    window.analytics.track("Generate Button Clicked", {
-      page_name: "utm_builder",
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
     var regex = /[^0-9a-zA-Z]/gm;
     let validationDataWeb = {};
     if (isEmpty(redirect)) {
@@ -282,23 +277,11 @@ export default function Utm() {
   const onClickCopyLongUrl = () => {
     navigator.clipboard.writeText(finalUtmLink);
     toast.info("Copy to clipboard success");
-    window.analytics.track("Copy Button Clicked", {
-      page_name: "utm_builder",
-      copy_url: finalUtmLink,
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
   };
 
   const onClickCopyOnelink = () => {
     navigator.clipboard.writeText(onelink);
     toast.info("Copy to clipboard success");
-    window.analytics.track("Copy Button Clicked", {
-      page_name: "utm_builder",
-      copy_url: onelink,
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
   };
   const handleFallbackChange = () => {
     setFallBack(!fallback);
@@ -397,13 +380,7 @@ export default function Utm() {
       handleFetchOnelinkById(params.id);
     }
   }, []);
-  const segmentTracking = () => {
-    window.analytics.track("Download Qrcode Button Clicked", {
-      page_name: "qr_code",
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
-  };
+
   return (
     <>
       <div className="breadcum m-b-10">
@@ -965,7 +942,6 @@ export default function Utm() {
                       className="dwn-btn"
                       onClick={() => {
                         downloadCustomQRcode({ url: onelink, name: campaign });
-                        segmentTracking();
                       }}
                       size="small"
                     >
