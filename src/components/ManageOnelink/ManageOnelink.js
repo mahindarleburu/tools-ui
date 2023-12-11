@@ -40,23 +40,12 @@ const ListOnelink = () => {
   const auth = getAuth();
   const user = auth.currentUser;
   const handleEditClickOpen = (data) => {
-    window.analytics.track("Edit Onelink Button Clicked", {
-      page_name: "manage_onelink",
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
     const typeData = data.type === "shorturl" ? "shorten-url" : data.type;
-
     navigate("/" + typeData + "/" + data.onelink_code);
   };
 
   const handleDownloadQrCode = (data) => {
     downloadCustomQRcode({ url: data?.onelink, name: data.name });
-    window.analytics.track("Download Qrcode Button Clicked", {
-      page_name: "manage_onelink",
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
   };
 
   const handleEditClose = () => {
@@ -86,12 +75,6 @@ const ListOnelink = () => {
   const onClickCopyLongUrl = (data) => {
     navigator.clipboard.writeText(data);
     toast.info("Copy to clipboard success");
-    window.analytics.track("Copy Button Clicked", {
-      page_name: "manage_onelink",
-      copy_url:data,
-      url_path: window.location.host + "" + window.location.pathname,
-      full_url: window.location.href,
-    });
   };
 
   const columns = useMemo(
@@ -201,11 +184,6 @@ const ListOnelink = () => {
   };
 
   const handleDelete = async () => {
-    window.analytics.track("Delete Onelink Button Clciked", {
-      "page_name": 'manage_onelink',
-      "url_path": window.location.host + '' + window.location.pathname,
-      "full_url": window.location.href,
-  });
     dispatch(deleteOnelink(selectedRow));
     handleDeleteClose();
     setSelectedRow({});

@@ -35,12 +35,6 @@ const Profile = () => {
   const onCopy = () => {
     navigator.clipboard.writeText(martech_token);
     toast.success("coppied");
-    window.analytics.track("Api Token Copied", {
-      "page_name": 'profile',
-      "copy_url":martech_token,
-      "url_path": window.location.host + '' + window.location.pathname,
-      "full_url": window.location.href,
-  });
   };
 
   return (
