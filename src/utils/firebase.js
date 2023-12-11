@@ -34,10 +34,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
-  prompt: "select_account",
-  hd: "carsome.com",
-});
 
 const auth = getAuth(app);
 

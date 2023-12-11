@@ -1,24 +1,3 @@
-.login-container{
-    background-color: #F7EFE5;
-}
-
-.header-login{
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 70px;
-}
-
-.carsome-logo{
-    height: 30px;
-}
-
-.bg-clr{
-    background-color: #F7EFE5 !important;
-}
-
 .hero-text{
     margin-top: 30vh;
 }
@@ -29,7 +8,5 @@
         margin-top: 0vh;
     }
 
-    .carsome-logo{
-        height: 20px;
-    }
+ 
 }

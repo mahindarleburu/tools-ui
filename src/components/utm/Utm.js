@@ -390,15 +390,6 @@ export default function Utm() {
           onClick={() => navigate("/home")}
         />
         <span className="fs-14"> / UTM</span>
-
-        <span className="request-source-btn">
-          <a
-            className="btn-primary-theme"
-            data-az-l="13f70d08-f8e9-446b-b5fd-a10179152a60"
-          >
-            Request to add new source
-          </a>
-        </span>
       </div>
 
       <div className="container">

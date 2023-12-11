@@ -31,10 +31,7 @@ export default function MediaCard() {
             <Card className="cp feature-card">
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" className="fw-500">
-                  <ConstructionIcon className="va-middle p-r-5 ff-inherit" fontSize="large" /> UTM Builder
-                </Typography>
-                <Typography variant="body2">
-                UTM builder helps the marketing team easily create and manage UTM parameters for their campaigns to accurately track website traffic sources.
+                  <ConstructionIcon className="va-middle p-r-5 ff-inherit" fontSize="large" /> UTM Links
                 </Typography>
               </CardContent>
             </Card>
@@ -46,9 +43,6 @@ export default function MediaCard() {
                 <Typography gutterBottom variant="h5" component="div" className="fw-500">
                   <QrCode2Icon className="va-middle p-r-5" fontSize="large"/>QR Code
                 </Typography>
-                <Typography variant="body2">
-                QR code generator allows the marketing team to quickly generate QR codes for their campaigns, making it easier for customers to access information by simply scanning a code with their phone.
-                </Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -58,9 +52,6 @@ export default function MediaCard() {
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" className="fw-500">
                   <InsertLinkIcon className="va-middle p-r-5" fontSize="large"/>Shorten URL
-                </Typography>
-                <Typography variant="body2">
-                Short link generator the marketing team to generate short, branded links to use in their campaigns, making it easier to share links and track clicks.
                 </Typography>
               </CardContent>
             </Card>

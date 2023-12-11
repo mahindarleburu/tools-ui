@@ -19,7 +19,6 @@ import {
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./login.css"
-import CarsomLogo from "../../assets/logo.png"
 import HeroImg from "../../assets/hero-img.png"
 import "../../index.css"
 import "../../helper.css"
@@ -49,22 +48,11 @@ export default function SignInSide() {
 
   return (
     <>
-    <Container maxWidth="xl" className="bg-clr">
-      <Box className="header-login">
-          <img className="carsome-logo" src={CarsomLogo}></img>
-          <Button
-                className="btn-secondary-login position-right m-0"
-                type="submit"
-                variant="contained"
-                sx={{ mt: 3, mb: 2, pl: 5, pr:5}}
-                onClick={()=>signInWithGooglePopup("Login")}>
-                Login
-              </Button>
-      </Box>
+    <Container maxWidth="xl">
 
       <Grid container component="main" sx={{ height: "100vh" }}>
         
-        <Grid item xs={12} sm={12} md={7} square>
+        <Grid item xs={12} sm={12} md={7}>
           <Box sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -74,7 +62,7 @@ export default function SignInSide() {
           </Box>
         </Grid>
       
-        <Grid item xs={12} sm={12} md={5} square>
+        <Grid item xs={12} sm={12} md={5}>
           <Box className="hero-text" 
               sx={{
                 mx: 4,
@@ -82,8 +70,8 @@ export default function SignInSide() {
                 flexDirection: "column",
                 alignItems: "left",
               }}>
-              <Typography component="h1" variant="h3">Get things done with peace of mind.</Typography>
-              <Typography component="h6" variant="subtitle1">Generate UTM, Short Links, QR Codes & lot more.</Typography>
+              <Typography component="h1" variant="h3">Modern Marketing.</Typography>
+              {/* <Typography component="h6" variant="subtitle1">Generate UTM, Short Links, QR Codes & lot more.</Typography> */}
               <Box component="form"
                   noValidate
                   onSubmit={handleSubmit}

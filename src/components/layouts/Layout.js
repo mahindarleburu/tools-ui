@@ -30,7 +30,7 @@ import InsertLink from "@mui/icons-material/InsertLink";
 import Construction from "@mui/icons-material/Construction";
 import { AccountBox, ArrowDropDown, Logout, Person } from "@mui/icons-material";
 import AddLinkIcon from '@mui/icons-material/AddLink';
-import CarsomeLogo from "../../assets/logo.png"
+import BrandImage from "../../assets/heroImage.png"
 import "./layout.css"
 import { useLocation } from 'react-router-dom';
 
@@ -73,8 +73,7 @@ const Layout = (props) => {
     setselectedMenu(location.pathname)
   }, [location]);
   
-  
-  // const container = window !== undefined ? () => window().document.body : undefined;
+
   
   return (
 
@@ -86,14 +85,14 @@ const Layout = (props) => {
           className="header">
           <Toolbar
             sx={{
-              pr: "24px", // keep right padding when drawer closed
+              pr: "24px",
             }}>
             <Typography
               component="h1"
               variant="h6"
               color="inherit"
               noWrap>
-              <img className="carsome-logo-login" src={CarsomeLogo}></img>
+              <img className="brand-image" src={BrandImage}></img>
             </Typography>
 
             <Typography
@@ -101,7 +100,7 @@ const Layout = (props) => {
               color="inherit"
               noWrap
               sx={{ flexGrow: 1, marginLeft: '5vw'}}>
-              MarTech Tools
+              {/* MarTech Tools */}
             </Typography>
             
             <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'block' }, }}>
@@ -232,7 +231,7 @@ const Layout = (props) => {
         <Drawer variant="permanent"
               sx={{
                 display: { xs: 'none', sm: 'block' },
-                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#F7EFE5', height: '100vh', border: '0px' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#f5f5f5', height: '100vh', border: '0px' },
               }}
               open>
           <Toolbar />
