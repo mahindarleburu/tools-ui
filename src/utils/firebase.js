@@ -16,29 +16,17 @@ import {
   updateDoc,
   addDoc,
 } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Production Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD6fLPjvWWDwiZcTQIn7sCFlpaiit9Jzq0",
-  authDomain: "connectwyze.firebaseapp.com",
-  projectId: "connectwyze",
-  storageBucket: "connectwyze.appspot.com",
-  messagingSenderId: "845633525787",
-  appId: "1:845633525787:web:8c8d253d6156c2919600be"
+  apiKey: "AIzaSyBIKdPiu16H8gaY6PjGI5LB1cooNOGOhGQ",
+  authDomain: "connectwyze-prod.firebaseapp.com",
+  projectId: "connectwyze-prod",
+  storageBucket: "connectwyze-prod.appspot.com",
+  messagingSenderId: "604907096963",
+  appId: "1:604907096963:web:5143e08bea23d5b4d644b6"
 };
 
-// Staging Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCNBQMGy8X7_my2sw_MYGXfuwsZxJYa5ag",
-//   authDomain: "carsome-c8058.firebaseapp.com",
-//   projectId: "carsome-c8058",
-//   storageBucket: "carsome-c8058.appspot.com",
-//   messagingSenderId: "402850768952",
-//   appId: "1:402850768952:web:506a3fe86e9ee0adba5ecd",
-//   measurementId: "G-NWRHLJ7TSE",
-// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
