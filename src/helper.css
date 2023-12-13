@@ -1,5 +1,5 @@
 .legend1{
-    color: #fdcf33 !important;
+    color: #6fa8dc !important;
 }
 
 .legend2{
@@ -21,7 +21,11 @@
 }
 
 .bg-legend1{
-    background-color: #F7EFE5 !important;
+    background-color: #6fa8dc !important;
+}
+
+.bg-legend2{
+    background-color: #f5f5f5 !important;
 }
 
 .va-middle{

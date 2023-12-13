@@ -23,6 +23,8 @@ import HeroImg from "../../assets/hero-img.png"
 import "../../index.css"
 import "../../helper.css"
 import Container from '@mui/material/Container';
+import GIcon from '../../assets/g-icon.webp'
+import CompanyLogo from '../../assets/heroImage.png'
 
 
 export default function SignInSide() {
@@ -51,26 +53,17 @@ export default function SignInSide() {
     <Container maxWidth="xl">
 
       <Grid container component="main" sx={{ height: "100vh" }}>
-        
-        <Grid item xs={12} sm={12} md={7}>
-          <Box sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "left",
-              }}>
-           <img src={HeroImg}></img>
-          </Box>
-        </Grid>
       
-        <Grid item xs={12} sm={12} md={5}>
+      
+        <Grid item xs={12} sm={12} md={12}>
           <Box className="hero-text" 
               sx={{
                 mx: 4,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "left",
+                alignItems: "center",
               }}>
-              <Typography component="h1" variant="h3">Modern Marketing.</Typography>
+              <img className="logo-img" src={CompanyLogo}></img>
               {/* <Typography component="h6" variant="subtitle1">Generate UTM, Short Links, QR Codes & lot more.</Typography> */}
               <Box component="form"
                   noValidate
@@ -81,7 +74,8 @@ export default function SignInSide() {
                   variant="contained"
                   sx={{ mt: 3, mb: 2, pl: 7, pr: 7 }}
                   onClick={()=>signInWithGooglePopup('Get Started')}>
-                  Get Started
+                  <img className="gicon-img p-r-15" src={GIcon}/>
+                  <span >Sign in with Google</span>
                 </Button>
               </Box>
           </Box>

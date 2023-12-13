@@ -19,7 +19,6 @@ import { useSelector } from "react-redux";
 import AccessDenied from "../components/Admin/AccessDenied/AccessDenied";
 import NotFound from "../components/Admin/NotFound/NotFound";
 import Users from "../components/Admin/Users/Users";
-import Profile from "../components/Profile/Profile";
 import RedirectComponent from "../components/RedirectComponent/RedirectComponent";
 import ShortUrl from "../components/shorturl/ShortUrl";
 
@@ -104,10 +103,6 @@ const Routing = () => {
             <Route
               path="/manage-links"
               element={<ManageOnelink />}
-            />
-            <Route
-              path="/profile"
-              element={<Profile />}
             />
             {user.role === "super_admin" ? (
               <Route

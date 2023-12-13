@@ -2,7 +2,7 @@ import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Lottie from "react-lottie";
-import * as animationData from "./car.json";
+import * as animationData from "./loader.json";
 const Loading = () => {
   const defaultOptions = {
     loop: true,

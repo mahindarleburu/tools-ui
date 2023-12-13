@@ -123,10 +123,11 @@ body {
 }
 
 .btn-primary-login {
-  border-radius: 50px !important;
-  color: black !important;
-  background-color: #fdcf34 !important;
-  box-shadow: none !important;
+  border-radius: 5px !important;
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 2px solid #6fa8dc!important;
+  font-size: 16px !important;
 }
 
 
@@ -145,14 +146,14 @@ body {
   border-radius: 50px !important;
   color: black !important;
   background-color: transparent !important;
-  border: 3px solid #fdcf34 !important;
+  border: 3px solid #6fa8dc !important;
   box-shadow: none !important;
 }
 
 .btn-primary {
-  color: #000 !important;
+  color: #fff !important;
   font-weight: 600 !important;
-  background-color: #fdcf33 !important;
+  background-color: #6fa8dc !important;
   text-transform: capitalize !important;
   border-radius: 5px !important;
   padding: 8px 30px !important;
@@ -231,6 +232,7 @@ body {
   height: 35px;
   float: left;
 }
+
 
 
 @media only screen and (max-width: 600px) {

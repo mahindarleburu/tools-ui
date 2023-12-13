@@ -33,6 +33,7 @@ import AddLinkIcon from '@mui/icons-material/AddLink';
 import BrandImage from "../../assets/heroImage.png"
 import "./layout.css"
 import { useLocation } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const drawerWidth = 250;
 
@@ -104,26 +105,10 @@ const Layout = (props) => {
             </Typography>
             
             <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'block' }, }}>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton sx={{ p: 0 }}>
                 <Avatar alt={googleUser.displayName} src={googleUser.photoURL} />
               </IconButton>
               <span className="fw-500 p-l-10">{googleUser.displayName}</span>
-              <ArrowDropDown fontSize="large" className="cp va-middle" onClick={handleOpenUserMenu}/>
-              <Menu sx={{ mt: '45px' }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{vertical: 'top',horizontal: 'right',}}
-                  keepMounted
-                  transformOrigin={{vertical: 'top',horizontal: 'right',}}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}>
-                <MenuItem  onClick={()=>{handleCloseUserMenu(); navigate("/profile");}}>
-                  <Typography textAlign="center">Profile</Typography>
-                </MenuItem>
-                <MenuItem  onClick={()=>{handleCloseUserMenu(); signoutandredirect();}}>
-                  <Typography textAlign="center">Logout</Typography>
-                </MenuItem>
-              </Menu>
             </Box>
 
           <IconButton
@@ -189,8 +174,7 @@ const Layout = (props) => {
             { user?.role ==="super_admin" ? <>
               <ListSubheader
                 component="div"
-                id="nested-list-subheader"
-              >
+                id="nested-list-subheader">
                 Admin
               </ListSubheader>
               <ListItemButton selected={selectedMenu === "/manage_utm"} onClick={() => {navigate("/manage-utm"); handleDrawerToggle('Manage UTM');}}>
@@ -272,7 +256,7 @@ const Layout = (props) => {
               <ListSubheader
                 component="div"
                 id="nested-list-subheader"
-                className="bg-legend1">
+                className="bg-legend2">
                 Admin
               </ListSubheader>
               <ListItemButton selected={selectedMenu === "/manage-utm"} onClick={() => {navigate("/manage-utm");handleDrawerToggle('Manage UTM');}}>
@@ -288,14 +272,19 @@ const Layout = (props) => {
                 <ListItemText primary="Manage Users" />
               </ListItemButton>
               </> :'' }  
+              <ListItemButton onClick={() =>  {signoutandredirect(); handleDrawerToggle('Logout');}}>
+                <ListItemIcon>
+                  <LogoutIcon />
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
             </React.Fragment>
           </List>
         </Drawer>
         </Box>
         <Box
          component="main"
-         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-        >
+         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
           <Toolbar />
           {props.children}
           
