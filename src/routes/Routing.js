@@ -1,7 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "../components/dashboard/Dashboard";
 import Utm from "../components/utm/Utm";
 import Layout from "../components/layouts/Layout";
 import Login from "../components/login/Login";
@@ -32,7 +31,7 @@ const Routing = () => {
         const lastLoginAt = sessionStorage.getItem("lastLoginAt");
         if (lastLoginAt) {
           const currentDate = format(new Date(), "yyyy-MM-dd");
-          if (currentDate != lastLoginAt) {
+          if (currentDate !== lastLoginAt) {
             sessionStorage.removeItem("lastLoginAt");
             sessionStorage.setItem("lastLoginAt", format(new Date(), "yyyy-MM-dd"));
             await createUserDocumentFromAuth(user);
@@ -43,8 +42,6 @@ const Routing = () => {
         }
         // ...
       } else {
-        // User is signed out
-        // ...
         setCurrentUser(null);
         // navigate("/login");
         return;
@@ -68,14 +65,6 @@ const Routing = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route
-              path="/"
-              element={<Dashboard />}
-            />
-            <Route
-              path="/home"
-              element={<Dashboard />}
-            />
             <Route
               path="/utm"
               element={<Utm />}

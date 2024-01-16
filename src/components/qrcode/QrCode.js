@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import { Button, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { createShortUrlQrcode, createQrCode, qrCodeSelector, clearState, editQrCode } from "./QrCodeSlice";
-import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate, useParams } from "react-router-dom";
 import { QrCodeVal } from "./QrCodeVal";
 import { isEmpty } from "@firebase/util";
@@ -107,14 +106,6 @@ export default function QrCode() {
 
   return (
     <>
-      <div className="breadcum">
-        <HomeIcon
-          className="cp"
-          sx={{ fontSize: 18, verticalAlign: "sub" }}
-          onClick={() => navigate("/home")}
-        />
-        <span className=" fs-14"> / {params?.id ? "Edit QR Code": "QR Code"  } </span>
-      </div>
       <Box className="container vh-80">
         <form onSubmit={onClickBuild}>
           <Grid

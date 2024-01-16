@@ -23,7 +23,6 @@ import { isEmpty } from "../../../utils/function";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import HomeIcon from "@mui/icons-material/Home";
 //Mock Data
 
 const Users = () => {
@@ -127,14 +126,6 @@ const Users = () => {
 
   return (
     <>
-      <div className="breadcum">
-        <HomeIcon
-          className="cp"
-          sx={{ fontSize: 18, verticalAlign: "sub" }}
-          onClick={() => navigate("/home")}
-        />
-        <span className="fs-14"> / Users</span>
-      </div>
       <Box sx={{ flexGrow: 1, marginLeft: "20px", marginTop: "10px" }}>
         <Grid container spacing={2}>
           {users && <Grid  item xs={12} md={3}>

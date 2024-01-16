@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import ManageSources from "../../ManageSource/ManageSource";
 import ManageMediums from "../../ManageMedium/ManageMedium";
 import SourceMediumMapping from "../../SourceMediumMapping/SourceMediumMapping";
-import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from "react-router-dom";
 
 
@@ -53,10 +52,6 @@ const ManageUtm = (props) => {
 
   return (
     <>
-      <div className="breadcum"> 
-      <HomeIcon className="cp" sx={{ fontSize: 18, verticalAlign: 'sub', }} onClick={()=>navigate('/home')}/>  
-        <span className="fs-14"> /  Manage UTM</span>
-      </div>
       <Box sx={{ width: "100%", marginTop:"10px", marginLeft: '20px', }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs

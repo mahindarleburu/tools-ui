@@ -16,7 +16,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import QrCodeIcon from "@mui/icons-material/QrCode";
-import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import MenuItem from '@mui/material/MenuItem';
@@ -140,12 +139,6 @@ const Layout = (props) => {
         >
           <List component="nav">
             <React.Fragment>
-              <ListItemButton selected={selectedMenu ==="/home"} onClick={() => {navigate("/home"); handleDrawerToggle("Home");}}>
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="Home" />
-              </ListItemButton>
               <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm"); handleDrawerToggle('UTM Builder');}}>
                 <ListItemIcon>
                   <Construction />
@@ -221,12 +214,6 @@ const Layout = (props) => {
           <Toolbar />
           <List component="nav">
             <React.Fragment>
-              <ListItemButton selected={selectedMenu === "/home"} onClick={() => {navigate("/home");handleDrawerToggle('Home');}}>
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="Home" />
-              </ListItemButton>
               <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm");handleDrawerToggle('UTM Builder');}}>
                 <ListItemIcon>
                   <Construction />

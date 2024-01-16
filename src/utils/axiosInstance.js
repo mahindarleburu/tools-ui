@@ -1,14 +1,16 @@
 import axios from "axios";
+
+
 // Set config defaults when creating the instance
 export const instance = axios.create({
   baseURL: 'https://carso.me',
   // baseURL: "http://localhost:3001",
   // timeout: 1000,
-  headers: { martech_token: "e5246b1bdaa7c2b1cc3d8f0e65f4c7bec26c3936", platform:'tools' },
+  headers: { 
+    martech_token: "e5246b1bdaa7c2b1cc3d8f0e65f4c7bec26c3936", 
+    platform:'tools' 
+  },
 });
-
-// Alter defaults after instance has been created
-//   instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 const SET_AUTH_TOKEN = (token) => {
   if (token) {

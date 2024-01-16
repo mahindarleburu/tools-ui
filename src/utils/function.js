@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import QRCodeStyling from "qr-code-styling";
-import CarsomeLogo from "../assets/logo.png";
+
+
 export const generateLongUrl = (data) => {
   var joinType;
   data.url.match(/\?/gm) ? (joinType = "&") : (joinType = "?");
@@ -17,53 +18,11 @@ export const generateLongUrl = (data) => {
     "&utm_campaign=" +
     data.UTM_COUNTRY +
     "-" +
-    data.UTM_LOB +
-    "-" +
-    data.UTM_LANGUAGE +
-    "-" +
-    data.UTM_TYPE +
-    "-" +
     data.UTM_CAMPAIGN +
     "&utm_content=" +
     utm_content +
     "&utm_term=" +
     utm_term;
-  return encodeURI(longUrl);
-};
-
-export const generateLongAppsflyerUrl = (data) => {
-  var joinType;
-  data.url.match(/\?/gm) ? (joinType = "&") : (joinType = "?");
-  let longUrl =
-    data.url +
-    joinType +
-    "pid=" +
-    data.pid +
-    "&af_channel=" +
-    data.af_channel +
-    "&c=" +
-    data.UTM_COUNTRY +
-    "-" +
-    data.UTM_LOB +
-    "-" +
-    data.UTM_LANGUAGE +
-    "-" +
-    data.UTM_TYPE +
-    "-" +
-    data.c +
-    "&af_adset=" +
-    data.af_adset +
-    "&af_ad=" +
-    data.af_ad +
-    "&deep_link_value=" +
-    data.deep_link_value +
-    "&af_web_dp=" +
-    data.af_web_dp +
-    "&af_android_url=" +
-    data.af_android_url +
-    "&af_ios_url=" +
-    data.af_ios_url +
-    "&af_dp=app://open.carsome.consumer";
   return encodeURI(longUrl);
 };
 

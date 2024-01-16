@@ -9,7 +9,6 @@ import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
 import { getAuth } from "firebase/auth";
 import { createShortUrl, shortUrlSelector, clearState, editShortenCode } from "./ShortUrlSlice";
-import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { downloadCustomQRcode, isEmpty } from "../../utils/function";
@@ -109,15 +108,6 @@ export default function ShortUrl() {
 
   return (
     <>
-      <div className="breadcum">
-        <HomeIcon
-          className="cp"
-          sx={{ fontSize: 18, verticalAlign: "sub" }}
-          onClick={() => navigate("/home")}
-        />
-        <span className="fs-14"> / {params?.id ? "Edit Short URL": "Short URL"  }</span>
-      </div>
-
       <Box className="container vh-80">
         <form onSubmit={onClickBuild}>
           <Grid

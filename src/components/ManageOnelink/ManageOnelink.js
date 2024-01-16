@@ -23,7 +23,6 @@ import {
 import { createOnelinkValidation } from "./ManageOnelinkVal";
 import { convertToLocalTimeZone, downloadCustomQRcode, isEmpty } from "../../utils/function";
 import "./onelink.css";
-import HomeIcon from "@mui/icons-material/Home";
 import { toast } from "react-toastify";
 
 const ListOnelink = () => {
@@ -191,14 +190,6 @@ const ListOnelink = () => {
 
   return (
     <>
-      <div className="breadcum">
-        <HomeIcon
-          className="cp"
-          sx={{ fontSize: 18, verticalAlign: "sub" }}
-          onClick={() => navigate("/home")}
-        />
-        <span className="fs-14"> / Manage Links</span>
-      </div>
 
       <Box className="onelink-container">
         <MaterialReactTable

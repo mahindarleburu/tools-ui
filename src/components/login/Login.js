@@ -36,11 +36,9 @@ export default function SignInSide() {
 
   useEffect(() => {
     onAuthStateChanged(auth,async (user) => {
-
         if (user) {
-            navigate("/home");
+            navigate("/utm");
         } else {
-          // User is signed out
           return;
         }
       });
