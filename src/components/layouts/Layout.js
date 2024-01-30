@@ -79,20 +79,15 @@ const Layout = (props) => {
 
       <Box sx={{ display: "flex" }}>
         {/* <CssBaseline /> */}
+
         <AppBar
           position="fixed"
           sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, fontFamily: 'inherit', }}
           className="header">
-          <Toolbar
-            sx={{
-              pr: "24px",
-            }}>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap>
-              <img className="brand-image" src={BrandImage}></img>
+          
+          <Toolbar sx={{ pr: "24px", }}>
+            <Typography component="h1" variant="h6" color="inherit" noWrap>
+              <img alt="Company Logo" className="brand-image" src={BrandImage} />
             </Typography>
 
             <Typography
@@ -110,168 +105,170 @@ const Layout = (props) => {
               <span className="fw-500 p-l-10">{googleUser.displayName}</span>
             </Box>
 
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={()=> handleDrawerToggle('Drawer') }
-            sx={{ mr: 2, display: { sm: 'none' } }}>
-            <MenuIcon />
-          </IconButton>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={()=> handleDrawerToggle('Drawer') }
+              sx={{ mr: 2, display: { sm: 'none' } }}>
+              <MenuIcon />
+            </IconButton>
+
           </Toolbar>
         </AppBar>
-        <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders">
-        <Drawer
-          // container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={()=>handleDrawerToggle('Drawer Close')}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          <List component="nav">
-            <React.Fragment>
-              <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm"); handleDrawerToggle('UTM Builder');}}>
-                <ListItemIcon>
-                  <Construction />
-                </ListItemIcon>
-                <ListItemText primary="UTM Builder" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/qrcode"} onClick={() => {navigate("/qrcode"); handleDrawerToggle('QR Code');}}>
-                <ListItemIcon>
-                  <QrCodeIcon />
-                </ListItemIcon>
-                <ListItemText primary="QR Code" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/shorten-url"} onClick={() => {navigate("/shorten-url"); handleDrawerToggle('Shorten URL');}}>
-                <ListItemIcon>
-                  <AddLinkIcon />
-                </ListItemIcon>
-                <ListItemText primary="Shorten URL" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/manage-links"} onClick={() => {navigate("/manage-links"); handleDrawerToggle('Manage Link');}}>
-                <ListItemIcon>
-                  <InsertLink />
-                </ListItemIcon>
-                <ListItemText primary="Manage Link" />
-              </ListItemButton>
-              <Divider sx={{ my: 1 }} />
-            { user?.role ==="super_admin" ? <>
-              <ListSubheader
-                component="div"
-                id="nested-list-subheader">
-                Admin
-              </ListSubheader>
-              <ListItemButton selected={selectedMenu === "/manage_utm"} onClick={() => {navigate("/manage-utm"); handleDrawerToggle('Manage UTM');}}>
-                <ListItemIcon>
-                  <ListAltIcon />
-                </ListItemIcon>
-                <ListItemText primary="Manage UTM" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/manage-users"} onClick={() => {navigate("/manage-users"); handleDrawerToggle('Manage Users');}}>
-                <ListItemIcon>
-                  <Person />
-                </ListItemIcon>
-                <ListItemText primary="Manage Users" />
-              </ListItemButton>
-              </> :'' }  
-              <ListSubheader
-                component="div"
-                id="nested-list-subheader"
-              >
-                Account
-              </ListSubheader>
-              <ListItemButton selected={selectedMenu === "/profile"} onClick={() => {navigate("/profile"); handleDrawerToggle('Profile')}}>
-                <ListItemIcon>
-                  <AccountBox />
-                </ListItemIcon>
-                <ListItemText primary="Profile" />
-              </ListItemButton>
-              <ListItemButton onClick={() =>  {signoutandredirect(); handleDrawerToggle('Logout')}}>
-                <ListItemIcon>
-                  <Logout />
-                </ListItemIcon>
-                <ListItemText primary="Logout" />
-              </ListItemButton>
-            </React.Fragment>
-          </List>
-        </Drawer>
+        
+        <Box component="nav"
+              sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+              aria-label="mailbox folders">
+         
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={()=>handleDrawerToggle('Drawer Close')}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: 'block', sm: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, top: '55px' },
+            }}
+          >
+            <List component="nav">
+              <React.Fragment>
+                <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm"); handleDrawerToggle('UTM Builder');}}>
+                  <ListItemIcon>
+                    <Construction />
+                  </ListItemIcon>
+                  <ListItemText primary="UTM Builder" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/qrcode"} onClick={() => {navigate("/qrcode"); handleDrawerToggle('QR Code');}}>
+                  <ListItemIcon>
+                    <QrCodeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="QR Code" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/shorten-url"} onClick={() => {navigate("/shorten-url"); handleDrawerToggle('Shorten URL');}}>
+                  <ListItemIcon>
+                    <AddLinkIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Shorten URL" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/manage-links"} onClick={() => {navigate("/manage-links"); handleDrawerToggle('Manage Link');}}>
+                  <ListItemIcon>
+                    <InsertLink />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage Link" />
+                </ListItemButton>
+                <Divider sx={{ my: 1 }} />
+              { user?.role ==="super_admin" ? <>
+                <ListSubheader
+                  component="div"
+                  id="nested-list-subheader">
+                  Admin
+                </ListSubheader>
+                <ListItemButton selected={selectedMenu === "/manage_utm"} onClick={() => {navigate("/manage-utm"); handleDrawerToggle('Manage UTM');}}>
+                  <ListItemIcon>
+                    <ListAltIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage UTM" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/manage-users"} onClick={() => {navigate("/manage-users"); handleDrawerToggle('Manage Users');}}>
+                  <ListItemIcon>
+                    <Person />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage Users" />
+                </ListItemButton>
+                </> :'' }  
+                <ListSubheader
+                  component="div"
+                  id="nested-list-subheader"
+                >
+                  Account
+                </ListSubheader>
+                <ListItemButton selected={selectedMenu === "/profile"} onClick={() => {navigate("/profile"); handleDrawerToggle('Profile')}}>
+                  <ListItemIcon>
+                    <AccountBox />
+                  </ListItemIcon>
+                  <ListItemText primary="Profile" />
+                </ListItemButton>
+                <ListItemButton onClick={() =>  {signoutandredirect(); handleDrawerToggle('Logout')}}>
+                  <ListItemIcon>
+                    <Logout />
+                  </ListItemIcon>
+                  <ListItemText primary="Logout" />
+                </ListItemButton>
+              </React.Fragment>
+            </List>
+          </Drawer>
      
-        <Drawer variant="permanent"
-              sx={{
-                display: { xs: 'none', sm: 'block' },
-                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#f5f5f5', height: '100vh', border: '0px' },
-              }}
-              open>
-          <Toolbar />
-          <List component="nav">
-            <React.Fragment>
-              <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm");handleDrawerToggle('UTM Builder');}}>
-                <ListItemIcon>
-                  <Construction />
-                </ListItemIcon>
-                <ListItemText primary="UTM Builder" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/qrcode"} onClick={() => {navigate("/qrcode");handleDrawerToggle('QR Code');}}>
-                <ListItemIcon>
-                  <QrCodeIcon />
-                </ListItemIcon>
-                <ListItemText primary="QR Code" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/shorten-url"} onClick={() => {navigate("/shorten-url");handleDrawerToggle('Shorten URL');}}>
-                <ListItemIcon>
-                  <AddLinkIcon />
-                </ListItemIcon>
-                <ListItemText primary="Shorten URL" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/manage-links"} onClick={() => {navigate("/manage-links");handleDrawerToggle('Manage Links');}}>
-                <ListItemIcon>
-                  <InsertLink />
-                </ListItemIcon>
-                <ListItemText primary="Manage Link" />
-              </ListItemButton>
-              <Divider sx={{ my: 1 }} />
-            { user?.role ==="super_admin" ? <>
-              <ListSubheader
-                component="div"
-                id="nested-list-subheader"
-                className="bg-legend2">
-                Admin
-              </ListSubheader>
-              <ListItemButton selected={selectedMenu === "/manage-utm"} onClick={() => {navigate("/manage-utm");handleDrawerToggle('Manage UTM');}}>
-                <ListItemIcon>
-                  <ListAltIcon />
-                </ListItemIcon>
-                <ListItemText primary="Manage UTM" />
-              </ListItemButton>
-              <ListItemButton selected={selectedMenu === "/manage-users"} onClick={() => {navigate("/manage-users");handleDrawerToggle('Manage Users');}}>
-                <ListItemIcon>
-                  <Person />
-                </ListItemIcon>
-                <ListItemText primary="Manage Users" />
-              </ListItemButton>
-              </> :'' }  
-              <ListItemButton onClick={() =>  {signoutandredirect(); handleDrawerToggle('Logout');}}>
-                <ListItemIcon>
-                  <LogoutIcon />
-                </ListItemIcon>
-                <ListItemText primary="Logout" />
-              </ListItemButton>
-            </React.Fragment>
-          </List>
-        </Drawer>
+          <Drawer variant="permanent"
+                sx={{
+                  display: { xs: 'none', sm: 'block' },
+                  '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#f5f5f5', height: '100vh', border: '0px' },
+                }}
+                open>
+            <Toolbar />
+            <List component="nav">
+              <React.Fragment>
+                <ListItemButton selected={selectedMenu === "/utm"} onClick={() => {navigate("/utm");handleDrawerToggle('UTM Builder');}}>
+                  <ListItemIcon>
+                    <Construction />
+                  </ListItemIcon>
+                  <ListItemText primary="UTM Builder" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/qrcode"} onClick={() => {navigate("/qrcode");handleDrawerToggle('QR Code');}}>
+                  <ListItemIcon>
+                    <QrCodeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="QR Code" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/shorten-url"} onClick={() => {navigate("/shorten-url");handleDrawerToggle('Shorten URL');}}>
+                  <ListItemIcon>
+                    <AddLinkIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Shorten URL" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/manage-links"} onClick={() => {navigate("/manage-links");handleDrawerToggle('Manage Links');}}>
+                  <ListItemIcon>
+                    <InsertLink />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage Link" />
+                </ListItemButton>
+                <Divider sx={{ my: 1 }} />
+              { user?.role ==="super_admin" ? <>
+                <ListSubheader
+                  component="div"
+                  id="nested-list-subheader"
+                  className="bg-legend2">
+                  Admin
+                </ListSubheader>
+                <ListItemButton selected={selectedMenu === "/manage-utm"} onClick={() => {navigate("/manage-utm");handleDrawerToggle('Manage UTM');}}>
+                  <ListItemIcon>
+                    <ListAltIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage UTM" />
+                </ListItemButton>
+                <ListItemButton selected={selectedMenu === "/manage-users"} onClick={() => {navigate("/manage-users");handleDrawerToggle('Manage Users');}}>
+                  <ListItemIcon>
+                    <Person />
+                  </ListItemIcon>
+                  <ListItemText primary="Manage Users" />
+                </ListItemButton>
+                </> :'' }  
+                <ListItemButton onClick={() =>  {signoutandredirect(); handleDrawerToggle('Logout');}}>
+                  <ListItemIcon>
+                    <LogoutIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Logout" />
+                </ListItemButton>
+              </React.Fragment>
+            </List>
+          </Drawer>
         </Box>
-        <Box
-         component="main"
-         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
+
+        <Box component="main"
+            sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
+          
           <Toolbar />
           {props.children}
           
