@@ -2,18 +2,40 @@
     margin-top: 30vh;
 }
 
-.gicon-img{
+.google-signin-btn{
     height: 35px;
 }
 
-.logo-img{
-    width: 500px;
+.google-signin-btn > h6{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.google-img{
+    height: 35px;;
+}
+
+.company-img{
+    width: 30%;
     margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 600px) {
     .hero-text{
-        margin-top: 0vh;
+        margin-top: 25vh;
+    }
+
+    .company-img{
+        width: 100%;
+    }
+
+    .google-signin-btn > img{
+        height: 100%;
+    }
+
+    .google-signin-btn > h6{
+        font-size: 15px;
+        font-weight: 500;
     }
 
  

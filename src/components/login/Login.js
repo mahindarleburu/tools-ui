@@ -31,7 +31,7 @@ export default function SignInSide() {
   let navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    // const data = new FormData(event.currentTarget);
   };
 
   useEffect(() => {
@@ -49,10 +49,7 @@ export default function SignInSide() {
   return (
     <>
     <Container maxWidth="xl">
-
       <Grid container component="main" sx={{ height: "100vh" }}>
-      
-      
         <Grid item xs={12} sm={12} md={12}>
           <Box className="hero-text" 
               sx={{
@@ -61,19 +58,19 @@ export default function SignInSide() {
                 flexDirection: "column",
                 alignItems: "center",
               }}>
-              <img className="logo-img" src={CompanyLogo}></img>
+              <img alt="Connectwyze logo" className="company-img" src={CompanyLogo} />
               {/* <Typography component="h6" variant="subtitle1">Generate UTM, Short Links, QR Codes & lot more.</Typography> */}
               <Box component="form"
                   noValidate
                   onSubmit={handleSubmit}
                   sx={{ mt: 1 }}>
-                <Button className="btn-primary-login"
+                <Button className="btn-primary-login google-signin-btn"
                   type="submit"
                   variant="contained"
                   sx={{ mt: 3, mb: 2, pl: 7, pr: 7 }}
                   onClick={()=>signInWithGooglePopup('Get Started')}>
-                  <img className="gicon-img p-r-15" src={GIcon}/>
-                  <span >Sign in with Google</span>
+                  <img alt="Google Sign In Button" className="google-img p-r-15" src={GIcon}/>
+                  <h6 >Sign in with Google</h6>
                 </Button>
               </Box>
           </Box>
@@ -81,6 +78,7 @@ export default function SignInSide() {
 
       </Grid>
       </Container>
+      
     </>
   );
 }
