@@ -108,10 +108,23 @@ export default function Utm() {
       data.UTM_TERM = utmTerm ? utmTerm : "none";
       const longUrl = generateLongUrl(data);
       setFinalUtmLink(longUrl);
-      setDisableReset(true)
+      setDisableReset(true);
+      dispatch(
+        createOnelink({
+          long_url: longUrl,
+          user_id: user.uid,
+          user_name: user.displayName,
+          user_email: user.email,
+          name: campaign,
+          type: "utm",
+          meta: JSON.stringify(validationDataWeb),
+        })
+      );
     } else {
       setErrors(valError);
     }
+
+    
   };
 
 
@@ -422,7 +435,7 @@ export default function Utm() {
                 )}
                 {onelink ? (
                   <div className="m-t-10">
-                    <img height="200" src={short_qr_code} alt={"Shorten QR Code"}/>
+                    
                     <QRcodeImage url={onelink} />
                     <Button
                       className="dwn-btn"
